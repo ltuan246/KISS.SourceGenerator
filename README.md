@@ -69,25 +69,6 @@ public partial class Person
 }
 ```
 
-### Advanced Usage
-
-The generator works with:
-- Properties with getters and setters
-- Fields (public, private, protected)
-- Nested classes
-- Generic classes
-- Inheritance hierarchies
-
-```csharp
-[MessagePackObjectGenerator]
-public partial class Employee : Person
-{
-    public string EmployeeId { get; set; }
-    public decimal Salary { get; set; }
-    public List<string> Skills { get; set; }
-}
-```
-
 ## Requirements
 
 - .NET Standard 2.0 or higher
