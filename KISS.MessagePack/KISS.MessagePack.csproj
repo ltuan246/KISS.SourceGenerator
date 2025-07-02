@@ -5,11 +5,41 @@
         <LangVersion>latest</LangVersion>
         <IncludeBuildOutput>true</IncludeBuildOutput>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+        <!-- Package Metadata -->
         <PackageId>KISS.MessagePack</PackageId>
         <Version>1.0.0</Version>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <FileVersion>1.0.0.0</FileVersion>
+
+        <!-- Author and Company Information -->
         <Authors>ltuan</Authors>
-        <Description>Source generator for MessagePack</Description>
+        <Company>ltuan</Company>
+        <Copyright>Copyright (c) 2025 Tuan</Copyright>
+
+        <!-- Package Description and Metadata -->
+        <Title>KISS MessagePack Source Generator</Title>
+        <Description>A lightweight C# source generator that automatically generates MessagePack serialization attributes for classes. Simply mark your classes with [MessagePackObjectGenerator] and the generator will create the necessary MessagePack attributes and key assignments.</Description>
+        <PackageTags>sourcegenerator;messagepack;serialization;codegen;roslyn;analyzer</PackageTags>
+        <PackageProjectUrl>https://github.com/ltuan/KISS.SourceGenerator</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/ltuan/KISS.SourceGenerator</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+
+        <!-- License Information -->
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
+        <!-- Package Release Notes and README -->
+        <PackageReleaseNotes>Initial release of KISS MessagePack Source Generator. Provides automatic generation of MessagePack attributes for decorated classes.</PackageReleaseNotes>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+
+        <!-- Source Generator Specific Properties -->
         <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+        <!-- Development Dependency (since this is a build-time tool) -->
+        <DevelopmentDependency>true</DevelopmentDependency>
     </PropertyGroup>
 
     <ItemGroup>
@@ -19,6 +49,8 @@
 
     <ItemGroup>
         <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" />
+        <None Include="..\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\LICENSE" Pack="true" PackagePath="\" />
     </ItemGroup>
 
 </Project>
